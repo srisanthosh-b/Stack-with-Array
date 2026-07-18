@@ -1,0 +1,9 @@
+# Ignore compiled binaries
+*.exe
+*.o
+*.obj
+
+# Ignore temporary files
+*.tmp
+*~
+.DS_Store
