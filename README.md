@@ -16,6 +16,28 @@ This folder contains a simple C implementation of a stack data structure using a
 - `display` to show stack contents
 - `deleteStack` to free allocated memory
 
+## Block Diagram
+
+The diagram below highlights the fixed-size array-backed stack implemented in this project, showing the array slots, the `top` pointer, and the `push`/`pop` operations.
+
+```mermaid
+flowchart TB
+	subgraph StackArray["Stack (array)"]
+		direction TB
+		slot4["[4]  value"]
+		slot3["[3]  value"]
+		slot2["[2]  value"]
+		slot1["[1]  value"]
+		slot0["[0]  value"]
+	end
+	top["Top = 2"]
+	top --> slot2
+	push(["push(x)"]) -->|adds to| top
+	pop(["pop()"]) -->|removes from| top
+	classDef slots fill:#f8f9fa,stroke:#333,stroke-width:1px;
+	class slot0,slot1,slot2,slot3,slot4 slots;
+```
+
 ## Build and Run
 
 Use a C compiler such as `gcc`:

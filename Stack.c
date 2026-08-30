@@ -34,6 +34,7 @@ Status push(Stack s, int value){
         printf("\nStack Overflow: Cannot push the element\n");
         return FAILURE;
     }
+
     s->StackArray[++(s->top)]=value;
     printf("\nElement Added to Stack\n");
     return SUCCESS;
@@ -71,14 +72,13 @@ Status deleteStack(Stack s){
 }
 
 void display(Stack s){
-    if(isEmpty(s)==SUCCESS){
-        printf("\nStack is empty\n");
-    } else {
+    // if(isEmpty(s)==SUCCESS){
+    //     printf("\nStack is empty\n");
+    // } else {
         printf("\nStack elements: \n");
-        for(int i = 0; i < s->top; i++){
+        for(int i = s->top; i >= 0; i--){
             printf("\n %d", s->StackArray[i]);
             printf("\n |");
         }
-        printf("\n %d",s->StackArray[s->size-1]);
-    }
+        // printf("\n %d",s->StackArray[s->size-1]);
 }
